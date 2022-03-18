@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+/* Header Section*/
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px ;
+    background: rgb(242, 244, 243);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    transition: all .3s;
+}
+
+/* NAVBAR BACKGROUND */
+.header-container.bg {
+    background-color: rgb(71, 95, 105);
+    border-bottom: 2px solid white;
+}
+
+.header-container.bg .nav-link:hover{
+    background-color: rgb(71, 95, 105);
+
+}
+
+.header-container.bg .bar {
+    background-color: rgb(242, 244, 243);
+
+}
+
+.header-container.bg .hamburger-menu.active .bar {
+    background: white;
+}
+/* END BG */
+
+/* Header */
+
+
+/* MENU HAMBURGER */
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.hamburger-menu {
+    display: block;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all .3s ease-in-out;
+    background-color: black;
+}
+
+
+.hamburger-menu.active .bar:nth-child(2){
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);    
+}
+.hamburger-menu.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.nav-menu.active {
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-menu {
+    background: rgb(242, 244, 243);
+    width: 85%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    display: flex;
+    transition: .3s all ease-in-out;
+}
+
+.nav-li {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-li a {
+    padding: 30px 30px;
+    margin: 10px;
+    width: 50%;
+    text-align: center;
+    border: 2px solid rgb(34, 51, 59);
+    text-decoration: none;
+    color: rgb(34, 51, 59);
+    border-radius: 5px;
+}
+
+.nav-li a:hover {
+    background: rgb(34, 51, 59);
+    color: rgb(242, 244, 243);
+}
+
+/* Hamburger-menu */
+.header {
+    background: rgb(231, 231, 231);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Produse */
+
+
+/* Start Produse Section */
+.Produse {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#produse-noi {
+    margin-bottom: 30px;
+}
+
+.row-produse {
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.col-produse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.col-produse img {
+    width: 60%;
+}
+
+.col-produse h3 {
+    padding-top: 10px;
+}
+
+.col-produse p{
+    padding: 25px;
+    text-align: justify;
+}
+/* End Produse */
+
+
+/* Footer */
+
+
+/* Footer */
+footer {
+    background: black;
+    padding: 20px;
+}
+
+
+.row-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.col-top-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.col-link-footer {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-link-footer h3{
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+}
+
+.linkuri {
+    color: whtie;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkuri a {
+    color: white;
+    text-decoration: none;
+}
+
+.linkuri a:hover {
+    color: rgb(206, 206, 206);
+}
+/* End Footer */
+
+
+
+/* MEDIA QUERY*/
+@media (min-width: 576px) { 
+    /* Produse */
+    .Produse{
+        padding: 20px;
+    }
+
+    .row-produse {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .col-produse img {
+        width: 80%;
+    }
+    /* End Produse */
+}
+
+@media (min-width: 768px) { 
+
+    /* Navbar Desktop */
+    .hamburger-menu{
+        display: none;
+    }
+
+        
+    nav {
+        display: flex;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .nav-menu {
+        position:relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        background: transparent;
+    }
+
+    .nav-li {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+
+
+
+    .nav-li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: rgb(34,51,59);
+        padding: 10px 50px;
+        color: white;
+        border-radius: 5px;    
+    }
+    
+    .nav-li a:hover {
+        background: rgb(34, 32, 32);
+    }
+    /* End Navbar Desktop */
+
+
+    /* Header-container */
+    .header-container {
+        padding: 20px 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    /* End Header-container */
+
+
+    /* Produse */
+    .Produse {
+        padding: 20px 100px;
+    }
+
+    .row-produse {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* End Produse */
+
+
+    /* Footer */
+    footer {
+        padding: 20px 100px;
+    }
+    /* End Footer */
+}
+
+
+
+@media (min-width: 992px) { 
+    /* Produse */
+    .row-produse {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .col-produse img {
+        width: 60%;
+    }
+    /* End Produse */
+
+}
